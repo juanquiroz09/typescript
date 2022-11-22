@@ -1,15 +1,16 @@
 var Coche = /** @class */ (function () {
     function Coche(modelo) {
-        if (modelo === void 0) { modelo = null; }
+        if (modelo === void 0) { modelo = " "; }
+        this.color = "Blanco";
         this.velocidad = 0;
-        if ((modelo = null)) {
+        if (modelo = " ") {
             this.modelo = "BMW Generico";
         }
         else {
             this.modelo = modelo;
         }
     }
-    Coche.prototype.getMOdelo = function () {
+    Coche.prototype.getModelo = function () {
         return this.modelo;
     };
     Coche.prototype.setModelo = function (modelo) {
@@ -39,7 +40,8 @@ coche.setColor("Rojo");
 coche.acelerar();
 coche.acelerar();
 coche.acelerar();
-console.log("El modelo del coche 1 es: " + coche.getMOdelo());
+coche.setModelo("sub");
+console.log("El modelo del coche 1 es: " + coche.getModelo());
 console.log("El color del coche 1 es: " + coche.getColor());
 console.log("La velocidad del coche 1 es: " + coche.getVelocidad());
 coche.frenar();

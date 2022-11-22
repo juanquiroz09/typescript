@@ -1,17 +1,23 @@
-class Coche {
+interface CocheBase{
+  getModelo(): string;
+  getVelocidad():number;
+}
+class Coche implements CocheBase {
   public color: string;
   public modelo: string;
   public velocidad: number;
 
-  constructor(modelo: any = null) {
+  constructor(modelo: any = " ") {
+    this.color = "Blanco";
     this.velocidad = 0;
-    if ((modelo = null)) {
+    if (modelo = " ") {
       this.modelo = "BMW Generico";
     } else {
         this.modelo = modelo;
     }
   }
-  getMOdelo(){
+  
+  getModelo(){
     return this.modelo;
   }
   setModelo(modelo: string){
@@ -44,7 +50,8 @@ coche.setColor("Rojo");
 coche.acelerar();
 coche.acelerar();
 coche.acelerar();
-console.log("El modelo del coche 1 es: " + coche.getMOdelo());
+coche.setModelo("sub");
+console.log("El modelo del coche 1 es: " + coche.getModelo());
 console.log("El color del coche 1 es: " + coche.getColor());
 console.log("La velocidad del coche 1 es: " + coche.getVelocidad());
 
