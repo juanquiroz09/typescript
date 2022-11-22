@@ -13,6 +13,36 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var Tienda;
+(function (Tienda) {
+    var Ropa = /** @class */ (function () {
+        function Ropa(titulo) {
+            this.titulo = titulo;
+            alert(titulo);
+        }
+        return Ropa;
+    }());
+    var Informatica = /** @class */ (function () {
+        function Informatica(titulo) {
+            this.titulo = titulo;
+            alert('Tienda de Tecnología: ' + titulo);
+        }
+        return Informatica;
+    }());
+    Tienda.Informatica = Informatica;
+})(Tienda || (Tienda = {}));
+var Informatica = Tienda.Informatica;
+var cargar_iinformatica = new Informatica('supertienda');
+/*
+function arranque(lanzar: string) {
+  return function (target: Function) {
+    target.prototype.saludo = function (): void {
+      console.log(lanzar);
+    };
+  };
+}
+@arranque("Lanzamineto del curso Nodejs y Angular")
+*/
 var Programa = /** @class */ (function () {
     function Programa() {
     }
@@ -30,6 +60,10 @@ var Programa = /** @class */ (function () {
     };
     return Programa;
 }());
+/*
+var programa = new Programa();
+(programa as any).lanzamiento();
+*/
 var EditorVideo = /** @class */ (function (_super) {
     __extends(EditorVideo, _super);
     function EditorVideo() {
@@ -42,7 +76,7 @@ var EditorVideo = /** @class */ (function (_super) {
         return this.timeline;
     };
     EditorVideo.prototype.getAllData = function () {
-        return this.getNombre() + " - " + this.getVersion() + " - " + this.getTimeline();
+        return (this.getNombre() + " - " + this.getVersion() + " - " + this.getTimeline());
     };
     return EditorVideo;
 }(Programa));
@@ -54,7 +88,7 @@ console.log(editor.getAllData());
 //Logica del formulario
 var programas = [];
 function guardar() {
-    var nombre = document.getElementById('nombre').value;
+    var nombre = document.getElementById("nombre").value;
     var programa = new Programa();
     programa.setNombre(nombre);
     programa.setVersion(1);
