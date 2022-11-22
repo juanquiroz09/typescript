@@ -34,3 +34,19 @@ editor.setVersion(8);
 editor.setTimeline(4000);
 
 console.log(editor.getAllData());
+//Logica del formulario
+var programas = [] as any;
+function guardar(){
+  var nombre = (<HTMLInputElement>document.getElementById('nombre')).value;
+  var programa = new Programa();
+  programa.setNombre(nombre);
+  programa.setVersion(1);
+  programas.push(programa);
+
+  var list = "";
+  for (let i = 0; i < programas.length-1; i++) {
+    list = list + "<li>" + programas[i].getNombre()+"</li>"; 
+  }
+  var listado = <HTMLInputElement>document.getElementById("listado");
+  listado.innerHTML = list;
+}
